@@ -1,0 +1,16 @@
+# 依赖/构建产物
+node_modules/
+dist/
+build/
+
+# 日志与临时文件
+*.log
+tmp/
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code 配置（按需）
+.vscode/
