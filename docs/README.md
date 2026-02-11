@@ -1,7 +1,7 @@
 STAMP (ICLR 2026)
 ===========
 
-Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology.
+**Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology**
 
 ArXiv (TBD) | OpenReview (TBD)
 
