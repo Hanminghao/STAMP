@@ -3,17 +3,16 @@ STAMP (ICLR 2026)
 
 Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology.
 
-ArXiv (TBD) | IEEE Paper (TBD) | Code & Resources: https://github.com/Hanminghao/STAMP
+ArXiv (TBD) | OpenReview (TBD)
 
-<img src="logo.png" width="150px" align="right" />
+<img src="logo.png" width="200px" align="right" />
 
 **Abstract:** Recent years have witnessed remarkable progress in multimodal learning within computational pathology. Existing models primarily rely on vision and language modalities; however, language alone lacks molecular specificity and offers limited pathological supervision, leading to representational bottlenecks. In this paper, we propose **STAMP**, a Spatial Transcriptomics-Augmented Multimodal Pathology representation learning framework that integrates spatially-resolved gene expression profiles to enable molecule-guided joint embedding of pathology images and transcriptomic data. Our study shows that self-supervised, gene-guided training provides a robust and task-agnostic signal for learning pathology image representations. Incorporating spatial context and multi-scale information further enhances model performance and generalizability. To support this, we constructed SpaVis-6M, the largest Visium-based spatial transcriptomics dataset to date, and trained a spatially-aware gene encoder on this resource. Leveraging hierarchical multi-scale contrastive alignment and cross-scale patch localization mechanisms, STAMP effectively aligns spatial transcriptomics with pathology images, capturing spatial structure and molecular variation.
-We validate STAMP across six datasets and four downstream tasks, where it consistently achieves strong performance. These results highlight the value and necessity of integrating spatially resolved molecular supervision for advancing multimodal learning in computational pathology. The code is included in the supplementary materials.
+We validate STAMP across six datasets and four downstream tasks, where it consistently achieves strong performance. These results highlight the value and necessity of integrating spatially resolved molecular supervision for advancing multimodal learning in computational pathology.
 
 ---
 
 <img src="overall.png" scaledwidth="50%" align="center" />
-
 
 
 ## Highlights
@@ -67,7 +66,7 @@ Key ingredients:
 
 Implementation notes:
 - The multimodal alignment model is implemented in `models/_stamp.py`.
-- Visual prompt learners are implemented in `models/_prompt_learner.py` (UNI and CONCH are supported depending on your setup).
+- Visual prompt learners are implemented in `models/_prompt_learner.py` (UNI and CONCH are supported).
 
 ## Quickstart: Tokenize a Raw ST `.h5ad` and Encode with a Pretrained STAMP
 This repo provides `tokenize_and_encode.py` to:
