@@ -112,12 +112,9 @@ For large-scale training, the dataloaders in `data/datamodules.py` expect sharde
 If you find our work useful, please cite:
 ```bibtex
 @article{STAMP_TBD,
-  title   = {STAMP: Spatial Transcriptomics-Augmented Multimodal Pathology Representation Learning},
+  title   = {Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology},
   author  = {TBD},
   journal = {TBD},
   year    = {TBD}
 }
 ```
-
-## Acknowledgements
-- TBD
