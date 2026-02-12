@@ -3,7 +3,7 @@ STAMP (ICLR 2026)
 
 **Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology**
 
-ArXiv (TBD) | OpenReview (TBD)
+[ArXiv](https://github.com/Hanminghao/STAMP) | [OpenReview](https://github.com/Hanminghao/STAMP) | [Dataset](https://huggingface.co/datasets/minghaofdu/SpaVis-6M)
 
 <img src="logo.png" width="200px" align="right" />
 
