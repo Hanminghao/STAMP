@@ -3,7 +3,7 @@ STAMP (ICLR 2026)
 
 **Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology**
 
-[Paper](https://github.com/Hanminghao/STAMP) | [Model](https://huggingface.co/datasets/minghaofdu/SpaVis-6M) | [Dataset](https://huggingface.co/datasets/minghaofdu/SpaVis-6M) |
+[Paper](https://arxiv.org/abs/2602.13944) | [Model](https://huggingface.co/datasets/minghaofdu/SpaVis-6M) | [Dataset](https://huggingface.co/datasets/minghaofdu/SpaVis-6M) |
 
 <img src="logo.png" width="200px" align="right" />
 
@@ -111,10 +111,10 @@ For large-scale training, the dataloaders in `data/datamodules.py` expect sharde
 ## Citation
 If you find our work useful, please cite:
 ```bibtex
-@article{STAMP_TBD,
-  title   = {Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology},
-  author  = {TBD},
-  journal = {TBD},
-  year    = {TBD}
+@article{han2026fusing,
+  title={Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology},
+  author={Han, Minghao and Yang, Dingkang and Qu, Linhao and Chen, Zizhi and Li, Gang and Wang, Han and Wang, Jiacong and Zhang, Lihua},
+  journal={arXiv preprint arXiv:2602.13944},
+  year={2026}
 }
 ```
