@@ -72,28 +72,15 @@ class Stamp(pl.LightningModule):
         else:
             print("No pretrained path provided for spot backbone, using random initialization.")
             
-        if visual_config['pretrained_path'] is not None and visual_config['model_name'] == 'conch':
-            from conch.open_clip_custom import create_model_from_pretrained
-            visual_model =  create_model_from_pretrained("conch_ViT-B-16", 
-                                 checkpoint_path=visual_config['pretrained_path'], 
-                                 force_image_size=224,
-                                 return_transform=False)
-            
-            from models._prompt_learner import VisionPromptLearnerConch 
-            self.visual_backbone  = VisionPromptLearnerConch(visual_model)
-            self.patch_projection = nn.Linear(self.visual_backbone.pro_dim, dim_output)
-            self.region_projection = nn.Linear(self.visual_backbone.pro_dim, dim_output)
-            self.positioning_projection = nn.Linear(self.visual_backbone.pro_dim, dim_output)
-
-        elif visual_config['pretrained_path'] is not None and visual_config['model_name'] == 'uni':
+        if visual_config['model_name'] == 'uni':
             visual_model = timm.create_model("vit_large_patch16_224", img_size=224, patch_size=16, init_values=1e-5, num_classes=0, dynamic_img_size=True)
-            visual_model.load_state_dict(torch.load(visual_config['pretrained_path'], map_location="cpu"), strict=True)
+            if visual_config['pretrained_path'] is not None:
+                visual_model.load_state_dict(torch.load(visual_config['pretrained_path'], map_location="cpu"), strict=True)
             from models._prompt_learner import VisionPromptLearnerUni
             self.visual_backbone = VisionPromptLearnerUni(visual_model)
             self.patch_projection = nn.Linear(visual_model.embed_dim, dim_output)
             self.region_projection = nn.Linear(visual_model.embed_dim, dim_output)
             self.positioning_projection = nn.Linear(visual_model.embed_dim, dim_output)
-            
 
         self.visual_backbone.train()
         self.visual_backbone_name = visual_config['model_name']

@@ -200,9 +200,23 @@ def load_stamp_model(args, device):
     if not ckpt_path:
         raise ValueError("pretrained_path is not set in _config_finetune_stamp.py; please update it or supply a checkpoint.")
     checkpoint = torch.load(ckpt_path, map_location='cpu')
-    missing_layers = model.load_state_dict(checkpoint['state_dict'], strict=False)
+
+    # Support both lightning checkpoints ({'state_dict': ...}) and plain .bin state_dict files.
+    if isinstance(checkpoint, dict) and 'state_dict' in checkpoint and isinstance(checkpoint['state_dict'], dict):
+        state_dict = checkpoint['state_dict']
+    elif isinstance(checkpoint, dict):
+        state_dict = checkpoint
+    else:
+        raise ValueError(f'Unsupported checkpoint format in {ckpt_path}: expected dict, got {type(checkpoint)}')
+
+    if any(k.startswith('module.') for k in state_dict):
+        state_dict = {k[7:] if k.startswith('module.') else k: v for k, v in state_dict.items()}
+
+    missing_layers = model.load_state_dict(state_dict, strict=False)
     if missing_layers.missing_keys:
         print('Warning: missing keys when loading checkpoint:', missing_layers.missing_keys)
+    if missing_layers.unexpected_keys:
+        print('Warning: unexpected keys when loading checkpoint:', missing_layers.unexpected_keys)
 
     model.eval()
     model.to(device)

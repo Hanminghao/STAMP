@@ -1,5 +1,5 @@
 sweep_config = {
-    'pretrained_path': '/Dataset4/hmh_data/PR_data/checkpoint/multi_checkpoint/uni/epoch=35-step=40176.ckpt', 
+    'pretrained_path': './pytorch_model.bin', 
     'retake_training': False,
     'batch_size': 128,
     'lr': 1e-4,
@@ -18,7 +18,7 @@ sweep_config = {
     }
 
 spot_config = {
-    'pretrained_path': "/Dataset4/hmh_data/PR_data/checkpoint/bert_checkpoint/w_spatial/epoch=1-step=3868.ckpt",
+    'pretrained_path': None,
     'dim_feedforward': 1024,
     'nheads': 16,
     'nlayers': 12,
@@ -34,6 +34,6 @@ spot_config = {
     }
 
 visual_config = {
-    'pretrained_path': "/home/hmh/weights/uni/pytorch_model.bin",
+    'pretrained_path': None,
     'model_name': 'uni', 
     }

@@ -14,3 +14,9 @@ __pycache__/
 
 # VS Code 配置（按需）
 .vscode/
+
+# 模型权重
+pytorch_model.bin
+
+# 自身
+.gitignore

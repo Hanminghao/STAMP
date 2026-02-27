@@ -1,9 +1,19 @@
-STAMP (ICLR 2026)
-===========
 
-**Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology**
+<div align="center">
+<br>
+<h1>[ICLR 2026] Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology</h1>
 
-[Paper](https://arxiv.org/abs/2602.13944) | [Model](https://huggingface.co/datasets/minghaofdu/SpaVis-6M) | [Dataset](https://huggingface.co/datasets/minghaofdu/SpaVis-6M) |
+<h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for the latest update.</h5>
+
+
+<font size=7><div align='center' >
+[[🏠 Project Page](https://github.com/Hanminghao/STAMP)]
+[[📖 Paper](https://arxiv.org/abs/2602.13944)]
+[[🤗 SpaVis-6M](https://huggingface.co/datasets/minghaofdu/SpaVis-6M)]
+[[🧠 Model Weight]](https://huggingface.co/minghaofdu/STAMP)
+</div></font>
+
+</div>
 
 <img src="logo.png" width="200px" align="right" />
 
@@ -12,7 +22,7 @@ We validate STAMP across six datasets and four downstream tasks, where it consis
 
 ---
 
-<img src="overall.png" scaledwidth="50%" align="center" />
+
 
 
 ## Highlights
